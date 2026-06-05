@@ -8,13 +8,21 @@ A fairness-focused machine learning project built with Python (PyTorch) and Goog
 
 ## 📋 Table of Contents
 - [Project Overview](#project-overview)
+- 
 - [Features](#features)
+- 
 - [Requirements](#requirements)
+- 
 - [Installation](#installation)
+- 
 - [How to Run](#how-to-run)
+- 
 - [Usage Examples](#usage-examples)
+- 
 - [Project Structure](#project-structure)
+- 
 - [Skills Demonstrated](#skills-demonstrated)
+- 
 - [Author](#author)
 
 ---
@@ -34,11 +42,17 @@ This project demonstrates how fairness-aware pipelines can mitigate bias in real
 ## ✨ Features
 
 ✅ **FairFace Dataset Integration** – Diverse demographic representation  
+
 ✅ **Pseudo-Balancing** – Adjusts training distribution for fairness  
+
 ✅ **Semi-Supervised Learning** – Confidence thresholding for unlabeled data  
+
 ✅ **ResNet18 Model** – Pretrained backbone for classification  
+
 ✅ **Bias Metrics** – Accuracy + fairness evaluation across subgroups  
+
 ✅ **Hyperparameter Tuning** – Configurable thresholds and batch sizes  
+
 ✅ **Colab Ready** – Runs seamlessly in Google Colab  
 
 ---
@@ -59,9 +73,15 @@ This project demonstrates how fairness-aware pipelines can mitigate bias in real
 | **Experimentation** | Hyperparameter tuning in Colab |
 
 | **🎓 Qualification Criteria Met**|-
+
 ✅ FairFace dataset integration-
+
 ✅ Pseudo-balancing fairness pipeline-
+
 ✅ Semi-supervised learning implementation-
+
 ✅ ResNet18 model training-
+
 ✅ Subgroup fairness evaluation-
+
 ✅ Hyperparameter tuning-
