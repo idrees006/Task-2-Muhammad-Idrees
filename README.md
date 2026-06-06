@@ -1,8 +1,8 @@
 # Task-2-Muhammad-Idrees
 
-# 🧑‍💻 Fairness-Aware ML Pipeline | Face Classification
+# 📊 KNN Iris Classification Pipeline
 
-A fairness-focused machine learning project built with Python (PyTorch) and Google Colab that demonstrates bias mitigation using the **FairFace dataset**. This project is part of the **DecodeLabs AI program**.
+A machine learning project demonstrating the **K-Nearest Neighbors (KNN)** algorithm applied to the classic **Iris dataset**. This project follows a structured INPUT → PROCESS → OUTPUT methodology with comprehensive model validation.
 
 ---
 
@@ -13,8 +13,9 @@ A fairness-focused machine learning project built with Python (PyTorch) and Goog
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [How to Run](#how-to-run)
-- [Usage Examples](#usage-examples)
 - [Project Structure](#project-structure)
+- [Model Details](#model-details)
+- [Results](#results)
 - [Skills Demonstrated](#skills-demonstrated)
 - [Author](#author)
 
@@ -22,35 +23,37 @@ A fairness-focused machine learning project built with Python (PyTorch) and Goog
 
 ## 🎯 Project Overview
 
-**Task-2** implements a **fairness-aware ML pipeline** for face classification. It integrates:
+**Task-2** implements a complete machine learning pipeline using the **KNN classifier** on the Iris dataset. The project demonstrates:
 
-- **Pseudo-balancing** to reduce bias across demographic subgroups
-- **Semi-supervised learning (FixMatch style)** for improved generalization
-- **ResNet18 backbone** for robust feature extraction
-- **Fairness metrics** (accuracy + selection rate) to evaluate subgroup performance
+- **Data Input & Preprocessing**: Loading and scaling the Iris dataset
+- **Model Training**: K-Nearest Neighbors with K=5
+- **Validation & Metrics**: Comprehensive classification evaluation
+- **Visualization**: Confusion matrix heatmap for results analysis
 
-This project demonstrates how fairness-aware pipelines can mitigate bias in real-world datasets.
+This project showcases the full ML workflow from data preparation to model validation.
 
 ---
 
 ## ✨ Features
 
-✅ **FairFace Dataset Integration** – Diverse demographic representation  
-✅ **Pseudo-Balancing** – Adjusts training distribution for fairness  
-✅ **Semi-Supervised Learning** – Confidence thresholding for unlabeled data  
-✅ **ResNet18 Model** – Pretrained backbone for classification  
-✅ **Bias Metrics** – Accuracy + fairness evaluation across subgroups  
-✅ **Hyperparameter Tuning** – Configurable thresholds and batch sizes  
-✅ **Colab Ready** – Runs seamlessly in Google Colab  
+✅ **Iris Dataset Integration** – 150 balanced samples with 4 dimensions  
+✅ **KNN Classification** – K=5 majority voting classifier  
+✅ **Feature Scaling** – StandardScaler for normalized features (mean=0, variance=1)  
+✅ **Train/Test Split** – 80/20 stratified split with shuffle  
+✅ **Comprehensive Metrics** – Accuracy, precision, recall, F1-score  
+✅ **Confusion Matrix Visualization** – Heatmap for error analysis  
+✅ **Classification Report** – Per-class performance breakdown  
 
 ---
 
 ## 📦 Requirements
 
 - Python 3.8+
-- PyTorch & Torchvision
-- NumPy, Pandas, Matplotlib
-- Google Colab (recommended)
+- scikit-learn
+- NumPy
+- Pandas
+- Matplotlib
+- Seaborn
 
 ---
 
@@ -62,52 +65,91 @@ git clone https://github.com/idrees006/Task-2-Muhammad-Idrees.git
 cd Task-2-Muhammad-Idrees
 
 # Install dependencies
-pip install torch torchvision numpy pandas matplotlib
+pip install scikit-learn numpy pandas matplotlib seaborn
 ```
 
 ---
 
 ## 🚀 How to Run
 
-1. Open the Jupyter notebook in Google Colab
-2. Install required packages
-3. Load the FairFace dataset
-4. Train the fairness-aware model with pseudo-balancing
-5. Evaluate fairness metrics across demographic subgroups
+```bash
+# Run the project
+python project_2.py
+```
+
+The script will:
+1. Load the Iris dataset (150 samples, 4 features)
+2. Split data into 80% training and 20% test sets
+3. Apply StandardScaler for feature normalization
+4. Train KNN model with K=5
+5. Generate predictions on test data
+6. Display accuracy, classification report, and confusion matrix
+7. Visualize results with a heatmap
 
 ---
 
-## 📊 Skills Demonstrated
+## 📊 Project Structure
+
+```
+project_2.py
+├── [1/3] INPUT PHASE
+│   ├── Load Iris dataset
+│   ├── Train/test split (80/20 stratified)
+│   └── Feature scaling (StandardScaler)
+├── [2/3] PROCESS PHASE
+│   ├── Instantiate KNeighborsClassifier (K=5)
+│   ├── Train model on scaled features
+│   └── Generate predictions
+└── [3/3] OUTPUT VALIDATION PHASE
+    ├── Calculate accuracy
+    ├── Print classification report
+    └── Visualize confusion matrix
+```
+
+---
+
+## 🤖 Model Details
+
+| Parameter | Value |
+|-----------|-------|
+| **Algorithm** | K-Nearest Neighbors |
+| **K Value** | 5 |
+| **Dataset** | Iris (150 samples, 4 features) |
+| **Classes** | 3 (Setosa, Versicolor, Virginica) |
+| **Training Set** | 120 samples (80%) |
+| **Test Set** | 30 samples (20%) |
+| **Scaler** | StandardScaler |
+
+---
+
+## 📈 Expected Results
+
+- High accuracy on Iris dataset (typically > 95%)
+- Balanced classification across all three iris species
+- Low false positives/negatives in confusion matrix
+- Strong F1-scores for each class
+
+---
+
+## 📚 Skills Demonstrated
 
 | Skill | Implementation |
 |-------|----------------|
-| **Fairness-Aware ML** | Pseudo-balancing + subgroup metrics |
-| **Semi-Supervised Learning** | FixMatch confidence thresholding |
-| **Deep Learning** | ResNet18 backbone |
-| **Data Processing** | FairFace dataset integration |
-| **Evaluation** | Accuracy + fairness metrics |
-| **Experimentation** | Hyperparameter tuning in Colab |
-
----
-
-## ✅ Qualification Criteria Met
-
-✅ FairFace dataset integration  
-✅ Pseudo-balancing fairness pipeline  
-✅ Semi-supervised learning implementation  
-✅ ResNet18 model training  
-✅ Subgroup fairness evaluation  
-✅ Hyperparameter tuning  
+| **Data Loading** | sklearn.datasets.load_iris |
+| **Data Preprocessing** | Train/test split, stratification, feature scaling |
+| **Model Training** | KNeighborsClassifier with hyperparameter tuning |
+| **Model Evaluation** | Accuracy, precision, recall, F1-score |
+| **Visualization** | Seaborn heatmap for confusion matrix |
+| **ML Pipeline** | Structured INPUT → PROCESS → OUTPUT workflow |
 
 ---
 
 ## 👤 Author
 
-**Muhammad Idrees**  
-DecodeLabs AI Program
+**Muhammad Idrees**
 
 ---
 
 ## 📝 License
 
-This project is part of the DecodeLabs AI program.
+This project is educational and part of a machine learning course.
